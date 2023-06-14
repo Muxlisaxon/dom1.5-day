@@ -1,21 +1,18 @@
-let selectFaild = document.getElementById("select_field");
-let selectText = document.getElementById("select_text");
-let options = document.getElementsByClassName("options");
+let selectField = document.getElementById("selectField");
+let selectText = document.getElementById("selectText");
 let list = document.getElementById("list");
-let arrowIcon = document.getElementById("arrowIcon")
+let arrowIcon = document.getElementById("arrowIcon");
+let options = document.getElementsByClassName("options");
 
-selectFaild.onclick = function () {
-    list.classList.toggle("hide");
-    arrowIcon.classList.toggle("rotate");
-}
-
-
+selectField.addEventListener("click", () => {
+  list.classList.toggle("hide");
+  arrowIcon.classList.toggle("rotate");
+});
 
 for (option of options) {
-    option.onclick = function () {
-        selectText.innerHTML = this.textContent;
-        list.classList.toggle("hide");
-        arrowIcon.classList.toggle("rotate");
-
-    }
+  option.onclick = function () {
+    selectText.innerHTML = this.textContent;
+    list.classList.toggle("hide");
+    arrowIcon.classList.toggle("rotate");
+  };
 }
